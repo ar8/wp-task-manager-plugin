@@ -1,5 +1,5 @@
 <?php
-// filepath: /Users/anita/ana_projects/my_wp_plugins/task-manager/src/Views/modals/project-modal.php
+// filepath: project-task-manager/src/Views/modals/project-modal.php
 
 defined( 'ABSPATH' ) || exit;
 ?>
@@ -10,9 +10,9 @@ defined( 'ABSPATH' ) || exit;
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="projectModalLabel">
-                    <i class="fas fa-plus me-2"></i><?php esc_html_e( 'Create New Project', 'task-manager' ); ?>
+                    <i class="fas fa-plus me-2"></i><?php esc_html_e( 'Create New Project', 'project-task-manager' ); ?>
                 </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="<?php esc_attr_e( 'Close', 'task-manager' ); ?>"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="<?php esc_attr_e( 'Close', 'project-task-manager' ); ?>"></button>
             </div>
 
             <form id="projectForm" class="needs-validation" novalidate>
@@ -22,14 +22,14 @@ defined( 'ABSPATH' ) || exit;
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="projectName" class="form-label">
-                            <?php esc_html_e( 'Name', 'task-manager' ); ?> <span class="text-danger">*</span>
+                            <?php esc_html_e( 'Name', 'project-task-manager' ); ?> <span class="text-danger">*</span>
                         </label>
                         <input 
                             type="text" 
                             class="form-control" 
                             id="projectName" 
                             name="project_name"
-                            placeholder="<?php esc_attr_e( 'Enter project name', 'task-manager' ); ?>"
+                            placeholder="<?php esc_attr_e( 'Enter project name', 'project-task-manager' ); ?>"
                             required
                         >
                         <div class="invalid-feedback" id="projectNameError"></div>
@@ -37,14 +37,14 @@ defined( 'ABSPATH' ) || exit;
 
                     <div class="mb-3">
                         <label for="projectDescription" class="form-label">
-                            <?php esc_html_e( 'Description', 'task-manager' ); ?>
+                            <?php esc_html_e( 'Description', 'project-task-manager' ); ?>
                         </label>
                         <textarea 
                             class="form-control" 
                             id="projectDescription" 
                             name="description"
                             rows="3"
-                            placeholder="<?php esc_attr_e( 'Enter project description', 'task-manager' ); ?>"
+                            placeholder="<?php esc_attr_e( 'Enter project description', 'project-task-manager' ); ?>"
                         ></textarea>
                         <div class="invalid-feedback" id="projectDescriptionError"></div>
                     </div>
@@ -53,7 +53,7 @@ defined( 'ABSPATH' ) || exit;
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="projectStartDate" class="form-label">
-                                    <?php esc_html_e( 'Start Date', 'task-manager' ); ?>
+                                    <?php esc_html_e( 'Start Date', 'project-task-manager' ); ?>
                                 </label>
                                 <input 
                                     type="date" 
@@ -67,7 +67,7 @@ defined( 'ABSPATH' ) || exit;
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="projectEndDate" class="form-label">
-                                    <?php esc_html_e( 'End Date', 'task-manager' ); ?>
+                                    <?php esc_html_e( 'End Date', 'project-task-manager' ); ?>
                                 </label>
                                 <input 
                                     type="date" 
@@ -83,10 +83,10 @@ defined( 'ABSPATH' ) || exit;
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        <?php esc_html_e( 'Cancel', 'task-manager' ); ?>
+                        <?php esc_html_e( 'Cancel', 'project-task-manager' ); ?>
                     </button>
                     <button type="submit" class="btn btn-primary" id="projectSubmitBtn">
-                        <i class="fas fa-save me-2"></i><?php esc_html_e( 'Create', 'task-manager' ); ?>
+                        <i class="fas fa-save me-2"></i><?php esc_html_e( 'Create', 'project-task-manager' ); ?>
                     </button>
                 </div>
             </form>
@@ -100,9 +100,9 @@ defined( 'ABSPATH' ) || exit;
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="projectModalLabelEdit">
-                    <i class="fas fa-edit me-2"></i><?php esc_html_e( 'Edit Project', 'task-manager' ); ?>
+                    <i class="fas fa-edit me-2"></i><?php esc_html_e( 'Edit Project', 'project-task-manager' ); ?>
                 </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="<?php esc_attr_e( 'Close', 'task-manager' ); ?>"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="<?php esc_attr_e( 'Close', 'project-task-manager' ); ?>"></button>
             </div>
 
             <form id="projectFormEdit" class="needs-validation" novalidate>
@@ -112,14 +112,14 @@ defined( 'ABSPATH' ) || exit;
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="projectNameEdit" class="form-label">
-                            <?php esc_html_e( 'Name', 'task-manager' ); ?> <span class="text-danger">*</span>
+                            <?php esc_html_e( 'Name', 'project-task-manager' ); ?> <span class="text-danger">*</span>
                         </label>
                         <input 
                             type="text" 
                             class="form-control" 
                             id="projectNameEdit" 
                             name="project_name"
-                            placeholder="<?php esc_attr_e( 'Enter project name', 'task-manager' ); ?>"
+                            placeholder="<?php esc_attr_e( 'Enter project name', 'project-task-manager' ); ?>"
                             required
                         >
                         <div class="invalid-feedback" id="projectNameEditError"></div>
@@ -127,14 +127,14 @@ defined( 'ABSPATH' ) || exit;
 
                     <div class="mb-3">
                         <label for="projectDescriptionEdit" class="form-label">
-                            <?php esc_html_e( 'Description', 'task-manager' ); ?>
+                            <?php esc_html_e( 'Description', 'project-task-manager' ); ?>
                         </label>
                         <textarea 
                             class="form-control" 
                             id="projectDescriptionEdit" 
                             name="description"
                             rows="3"
-                            placeholder="<?php esc_attr_e( 'Enter project description', 'task-manager' ); ?>"
+                            placeholder="<?php esc_attr_e( 'Enter project description', 'project-task-manager' ); ?>"
                         ></textarea>
                         <div class="invalid-feedback" id="projectDescriptionEditError"></div>
                     </div>
@@ -143,7 +143,7 @@ defined( 'ABSPATH' ) || exit;
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="projectStartDateEdit" class="form-label">
-                                    <?php esc_html_e( 'Start Date', 'task-manager' ); ?>
+                                    <?php esc_html_e( 'Start Date', 'project-task-manager' ); ?>
                                 </label>
                                 <input 
                                     type="date" 
@@ -157,7 +157,7 @@ defined( 'ABSPATH' ) || exit;
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="projectEndDateEdit" class="form-label">
-                                    <?php esc_html_e( 'End Date', 'task-manager' ); ?>
+                                    <?php esc_html_e( 'End Date', 'project-task-manager' ); ?>
                                 </label>
                                 <input 
                                     type="date" 
@@ -173,10 +173,10 @@ defined( 'ABSPATH' ) || exit;
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        <?php esc_html_e( 'Cancel', 'task-manager' ); ?>
+                        <?php esc_html_e( 'Cancel', 'project-task-manager' ); ?>
                     </button>
                     <button type="submit" class="btn btn-primary" id="projectEditSubmitBtn">
-                        <i class="fas fa-save me-2"></i><?php esc_html_e( 'Save', 'task-manager' ); ?>
+                        <i class="fas fa-save me-2"></i><?php esc_html_e( 'Save', 'project-task-manager' ); ?>
                     </button>
                 </div>
             </form>

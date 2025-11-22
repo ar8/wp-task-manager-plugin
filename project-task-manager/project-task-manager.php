@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name: Task Manager
- * Plugin URI: https://github.com/ar8/wp-task-manager-plugin
+ * Plugin Name: Project Task Manager
+ * Plugin URI: https://github.com/ar8/wp--plugin
  * Description: A drag-and-drop task management system for WordPress
  * Version: 1.0.0
  * Author: Ana Rodriguez
  * Author URI: https://anarodriguez.dev/
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: task-manager
+ * Text Domain: project-task-manager
  * Domain Path: /languages
  */
 
@@ -86,7 +86,7 @@ register_uninstall_hook( __FILE__, 'task_manager_uninstall' );
 add_action( 'plugins_loaded', function() {
     // Load plugin text domain
     load_plugin_textdomain(
-        'task-manager',
+        'project-task-manager',
         false,
         dirname( TASK_MANAGER_BASENAME ) . '/languages'
     );
@@ -101,10 +101,10 @@ add_action( 'plugins_loaded', function() {
 
 add_action( 'admin_menu', function() {
     add_menu_page(
-        __( 'Task Manager', 'task-manager' ),
-        __( 'Tasks', 'task-manager' ),
+        __( 'Task Manager', 'project-task-manager' ),
+        __( 'Tasks', 'project-task-manager' ),
         'manage_options',
-        'task-manager',
+        'project-task-manager',
         function() {
             include TASK_MANAGER_PATH . 'src/Views/dashboard.php';
         },
@@ -116,7 +116,7 @@ add_action( 'admin_menu', function() {
 // ============ ENQUEUE SCRIPTS & STYLES ============
 
 add_action( 'admin_enqueue_scripts', function( $hook ) {
-    if ( strpos( $hook, 'task-manager' ) === false ) {
+    if ( strpos( $hook, 'project-task-manager' ) === false ) {
         return;
     }
 
@@ -137,7 +137,7 @@ add_action( 'admin_enqueue_scripts', function( $hook ) {
 
     wp_enqueue_style(
         'task-manager-css',
-        TASK_MANAGER_URL . 'assets/css/task-manager.css',
+        TASK_MANAGER_URL . 'assets/css/project-task-manager.css',
         [ 'bootstrap-css' ],
         TASK_MANAGER_VERSION
     );
@@ -161,7 +161,7 @@ add_action( 'admin_enqueue_scripts', function( $hook ) {
 
     wp_enqueue_script(
         'task-manager-js',
-        TASK_MANAGER_URL . 'assets/js/task-manager.js',
+        TASK_MANAGER_URL . 'assets/js/project-task-manager.js',
         [ 'sortablejs', 'bootstrap-js' ],
         TASK_MANAGER_VERSION,
         true
@@ -171,29 +171,29 @@ add_action( 'admin_enqueue_scripts', function( $hook ) {
     wp_localize_script(
         'task-manager-js',
         'taskManagerAPI',
-        rest_url( 'task-manager/v1' )
+        rest_url( 'project-task-manager/v1' )
     );
 
     wp_localize_script(
-        'task-manager-js',
-        'taskManagerNonce',
-        wp_create_nonce( 'task_manager_nonce' )
+        'project-task-manager-js',
+        'projectTaskManagerNonce',
+        wp_create_nonce( 'project_task_manager_nonce' )
     );
 
     wp_localize_script(
-        'task-manager-js',
-        'taskManagerI18n',
+        'project-task-manager-js',
+        'projectTaskManagerI18n',
         [
-            'allProjects'              => __( 'All Projects', 'task-manager' ),
-            'selectProjectOptional'    => __( 'Select Project (Optional)', 'task-manager' ),
-            'taskCreated'              => __( 'Task created successfully', 'task-manager' ),
-            'projectCreated'           => __( 'Project created successfully', 'task-manager' ),
-            'taskUpdated'              => __( 'Task updated successfully', 'task-manager' ),
-            'projectUpdated'           => __( 'Project updated successfully', 'task-manager' ),
-            'taskDeleted'              => __( 'Task deleted successfully', 'task-manager' ),
-            'projectDeleted'           => __( 'Project deleted successfully', 'task-manager' ),
-            'deleteConfirmTask'        => __( 'Are you sure you want to delete this task?', 'task-manager' ),
-            'deleteConfirmProject'     => __( 'Are you sure you want to delete this project?', 'task-manager' ),
+            'allProjects'              => __( 'All Projects', 'project-task-manager' ),
+            'selectProjectOptional'    => __( 'Select Project (Optional)', 'project-task-manager' ),
+            'taskCreated'              => __( 'Task created successfully', 'project-task-manager' ),
+            'projectCreated'           => __( 'Project created successfully', 'project-task-manager' ),
+            'taskUpdated'              => __( 'Task updated successfully', 'project-task-manager' ),
+            'projectUpdated'           => __( 'Project updated successfully', 'project-task-manager' ),
+            'taskDeleted'              => __( 'Task deleted successfully', 'project-task-manager' ),
+            'projectDeleted'           => __( 'Project deleted successfully', 'project-task-manager' ),
+            'deleteConfirmTask'        => __( 'Are you sure you want to delete this task?', 'project-task-manager' ),
+            'deleteConfirmProject'     => __( 'Are you sure you want to delete this project?', 'project-task-manager' ),
         ]
     );
 });

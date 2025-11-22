@@ -1,5 +1,5 @@
 <?php
-// filepath: /task-manager/includes/install.php
+// filepath: /project-task-manager/includes/install.php
 
 namespace TaskManager\Includes;
 use TaskManager\Database\Migrations;

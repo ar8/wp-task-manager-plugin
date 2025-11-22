@@ -1,5 +1,5 @@
 <?php
-// filepath: /Users/anita/ana_projects/my_wp_plugins/task-manager/includes/routes.php
+// filepath: /project-task-manager/includes/routes.php
 
 namespace TaskManager\Routes;
 
@@ -25,9 +25,9 @@ class Routes {
         
         // ========== PROJECT ROUTES ==========
         
-        // GET /wp-json/task-manager/v1/projects
+        // GET /wp-json/project-task-manager/v1/projects
         register_rest_route(
-            'task-manager/v1',
+            'project-task-manager/v1',
             '/projects',
             [
                 'methods'             => 'GET',
@@ -46,9 +46,9 @@ class Routes {
             ]
         );
 
-        // POST /wp-json/task-manager/v1/projects
+        // POST /wp-json/project-task-manager/v1/projects
         register_rest_route(
-            'task-manager/v1',
+            'project-task-manager/v1',
             '/projects',
             [
                 'methods'             => 'POST',
@@ -74,9 +74,9 @@ class Routes {
             ]
         );
 
-        // GET /wp-json/task-manager/v1/projects/{id}
+        // GET /wp-json/project-task-manager/v1/projects/{id}
         register_rest_route(
-            'task-manager/v1',
+            'project-task-manager/v1',
             '/projects/(?P<id>\d+)',
             [
                 'methods'             => 'GET',
@@ -91,9 +91,9 @@ class Routes {
             ]
         );
 
-        // PUT/PATCH /wp-json/task-manager/v1/projects/{id}
+        // PUT/PATCH /wp-json/project-task-manager/v1/projects/{id}
         register_rest_route(
-            'task-manager/v1',
+            'project-task-manager/v1',
             '/projects/(?P<id>\d+)',
             [
                 'methods'             => [ 'PUT', 'PATCH' ],
@@ -120,9 +120,9 @@ class Routes {
             ]
         );
 
-        // DELETE /wp-json/task-manager/v1/projects/{id}
+        // DELETE /wp-json/project-task-manager/v1/projects/{id}
         register_rest_route(
-            'task-manager/v1',
+            'project-task-manager/v1',
             '/projects/(?P<id>\d+)',
             [
                 'methods'             => 'DELETE',
@@ -139,9 +139,9 @@ class Routes {
 
         // ========== TASK ROUTES ==========
 
-        // GET /wp-json/task-manager/v1/tasks
+        // GET /wp-json/project-task-manager/v1/tasks
         register_rest_route(
-            'task-manager/v1',
+            'project-task-manager/v1',
             '/tasks',
             [
                 'methods'             => 'GET',
@@ -167,9 +167,9 @@ class Routes {
             ]
         );
 
-        // POST /wp-json/task-manager/v1/tasks
+        // POST /wp-json/project-task-manager/v1/tasks
         register_rest_route(
-            'task-manager/v1',
+            'project-task-manager/v1',
             '/tasks',
             [
                 'methods'             => 'POST',
@@ -202,9 +202,9 @@ class Routes {
             ]
         );
 
-        // GET /wp-json/task-manager/v1/tasks/{id}
+        // GET /wp-json/project-task-manager/v1/tasks/{id}
         register_rest_route(
-            'task-manager/v1',
+            'project-task-manager/v1',
             '/tasks/(?P<id>\d+)',
             [
                 'methods'             => 'GET',
@@ -219,9 +219,9 @@ class Routes {
             ]
         );
 
-        // PUT/PATCH /wp-json/task-manager/v1/tasks/{id}
+        // PUT/PATCH /wp-json/project-task-manager/v1/tasks/{id}
         register_rest_route(
-            'task-manager/v1',
+            'project-task-manager/v1',
             '/tasks/(?P<id>\d+)',
             [
                 'methods'             => [ 'PUT', 'PATCH' ],
@@ -254,9 +254,9 @@ class Routes {
             ]
         );
 
-        // DELETE /wp-json/task-manager/v1/tasks/{id}
+        // DELETE /wp-json/project-task-manager/v1/tasks/{id}
         register_rest_route(
-            'task-manager/v1',
+            'project-task-manager/v1',
             '/tasks/(?P<id>\d+)',
             [
                 'methods'             => 'DELETE',
@@ -273,9 +273,9 @@ class Routes {
 
         // ========== CUSTOM TASK ROUTES ==========
 
-        // GET /wp-json/task-manager/v1/tasks/by-project/{project_id}
+        // GET /wp-json/project-task-manager/v1/tasks/by-project/{project_id}
         register_rest_route(
-            'task-manager/v1',
+            'project-task-manager/v1',
             '/tasks/by-project/(?P<project_id>\d+)',
             [
                 'methods'             => 'GET',
@@ -290,9 +290,9 @@ class Routes {
             ]
         );
 
-        // GET /wp-json/task-manager/v1/tasks/projects-dropdown
+        // GET /wp-json/project-task-manager/v1/tasks/projects-dropdown
         register_rest_route(
-            'task-manager/v1',
+            'project-task-manager/v1',
             '/tasks/projects-dropdown',
             [
                 'methods'             => 'GET',
@@ -301,9 +301,9 @@ class Routes {
             ]
         );
 
-        // GET /wp-json/task-manager/v1/tasks/overdue
+        // GET /wp-json/project-task-manager/v1/tasks/overdue
         register_rest_route(
-            'task-manager/v1',
+            'project-task-manager/v1',
             '/tasks/overdue',
             [
                 'methods'             => 'GET',
@@ -312,9 +312,9 @@ class Routes {
             ]
         );
 
-        // GET /wp-json/task-manager/v1/tasks/high-priority
+        // GET /wp-json/project-task-manager/v1/tasks/high-priority
         register_rest_route(
-            'task-manager/v1',
+            'project-task-manager/v1',
             '/tasks/high-priority',
             [
                 'methods'             => 'GET',
@@ -323,9 +323,9 @@ class Routes {
             ]
         );
 
-        // GET /wp-json/task-manager/v1/tasks/stats
+        // GET /wp-json/project-task-manager/v1/tasks/stats
         register_rest_route(
-            'task-manager/v1',
+            'project-task-manager/v1',
             '/tasks/stats',
             [
                 'methods'             => 'GET',
@@ -336,9 +336,9 @@ class Routes {
 
         // ========== TEST ROUTE ==========
 
-        // GET /wp-json/task-manager/v1/test
+        // GET /wp-json/project-task-manager/v1/test
         register_rest_route(
-            'task-manager/v1',
+            'project-task-manager/v1',
             '/test',
             [
                 'methods'             => 'GET',

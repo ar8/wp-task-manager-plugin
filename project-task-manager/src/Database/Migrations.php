@@ -1,5 +1,5 @@
 <?php
-// filepath: /Users/anita/ana_projects/my_wp_plugins/task-manager/src/Database/Migrations.php
+// filepath: project-task-manager/src/Database/Migrations.php
 
 namespace TaskManager\Database;
 

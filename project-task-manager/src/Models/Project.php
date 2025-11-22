@@ -1,5 +1,5 @@
 <?php
-// filepath: /Users/anita/ana_projects/my_wp_plugins/task-manager/src/Models/Project.php
+// filepath: project-task-manager/src/Models/Project.php
 
 namespace TaskManager\Models;
 

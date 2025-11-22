@@ -1,5 +1,5 @@
 <?php
-// filepath: /my_wp_plugins/task-manager/src/Views/dashboard.php
+// filepath: project-task-manager/src/Views/dashboard.php
 
 defined( 'ABSPATH' ) || exit;
 ?>
@@ -32,9 +32,9 @@ defined( 'ABSPATH' ) || exit;
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h1 class="h3 mb-2">
-                            <i class="fas fa-tasks me-3 text-primary"></i><?php esc_html_e( 'Task Management System', 'task-manager' ); ?>
+                            <i class="fas fa-tasks me-3 text-primary"></i><?php esc_html_e( 'Task Management System', 'project-task-manager' ); ?>
                         </h1>
-                        <p class="text-muted mb-0"><?php esc_html_e( 'Drag and drop tasks to manage their status', 'task-manager' ); ?></p>
+                        <p class="text-muted mb-0"><?php esc_html_e( 'Drag and drop tasks to manage their status', 'project-task-manager' ); ?></p>
                     </div>
                 </div>
             </div>
@@ -48,29 +48,29 @@ defined( 'ABSPATH' ) || exit;
                         <div class="row align-items-center">
                             <div class="col-md-6">
                                 <label for="projectSelect" class="form-label fw-bold">
-                                    <i class="fas fa-project-diagram me-2"></i><?php esc_html_e( 'Filter by Project:', 'task-manager' ); ?>
+                                    <i class="fas fa-project-diagram me-2"></i><?php esc_html_e( 'Filter by Project:', 'project-task-manager' ); ?>
                                 </label>
                                 <div class="input-group">
                                     <select id="projectSelect" class="form-select">
-                                        <option value=""><?php esc_html_e( 'All Projects', 'task-manager' ); ?></option>
+                                        <option value=""><?php esc_html_e( 'All Projects', 'project-task-manager' ); ?></option>
                                     </select>
-                                    <button type="button" class="btn btn-outline-primary" onclick="editProjectModal()" title="<?php esc_attr_e( 'Edit Project', 'task-manager' ); ?>">
+                                    <button type="button" class="btn btn-outline-primary" onclick="editProjectModal()" title="<?php esc_attr_e( 'Edit Project', 'project-task-manager' ); ?>">
                                         <i class="fas fa-edit"></i>
                                     </button>
-                                    <button type="button" class="btn btn-outline-danger" onclick="deleteProject()" title="<?php esc_attr_e( 'Delete Project', 'task-manager' ); ?>">
+                                    <button type="button" class="btn btn-outline-danger" onclick="deleteProject()" title="<?php esc_attr_e( 'Delete Project', 'project-task-manager' ); ?>">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </div>
                             </div>
                             <div class="col-md-6 text-end">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal">
-                                    <i class="fas fa-plus me-2"></i><?php esc_html_e( 'New Project', 'task-manager' ); ?>
+                                    <i class="fas fa-plus me-2"></i><?php esc_html_e( 'New Project', 'project-task-manager' ); ?>
                                 </button>
                                 <button type="button" class="btn btn-primary" onclick="openTaskModal()">
-                                    <i class="fas fa-plus me-2"></i><?php esc_html_e( 'New Task', 'task-manager' ); ?>
+                                    <i class="fas fa-plus me-2"></i><?php esc_html_e( 'New Task', 'project-task-manager' ); ?>
                                 </button>
                                 <button type="button" class="btn btn-outline-secondary ms-2" onclick="refreshTasks()">
-                                    <i class="fas fa-sync-alt me-2"></i><?php esc_html_e( 'Refresh', 'task-manager' ); ?>
+                                    <i class="fas fa-sync-alt me-2"></i><?php esc_html_e( 'Refresh', 'project-task-manager' ); ?>
                                 </button>
                             </div>
                         </div>
@@ -85,7 +85,7 @@ defined( 'ABSPATH' ) || exit;
                 <div class="card text-center stats-card shadow-sm">
                     <div class="card-body">
                         <div class="h2 text-primary mb-1" id="totalTasks">0</div>
-                        <div class="text-muted small"><?php esc_html_e( 'Total Tasks', 'task-manager' ); ?></div>
+                        <div class="text-muted small"><?php esc_html_e( 'Total Tasks', 'project-task-manager' ); ?></div>
                     </div>
                 </div>
             </div>
@@ -93,7 +93,7 @@ defined( 'ABSPATH' ) || exit;
                 <div class="card text-center stats-card shadow-sm">
                     <div class="card-body">
                         <div class="h2 text-success mb-1" id="completedTasks">0</div>
-                        <div class="text-muted small"><?php esc_html_e( 'Completed', 'task-manager' ); ?></div>
+                        <div class="text-muted small"><?php esc_html_e( 'Completed', 'project-task-manager' ); ?></div>
                     </div>
                 </div>
             </div>
@@ -101,7 +101,7 @@ defined( 'ABSPATH' ) || exit;
                 <div class="card text-center stats-card shadow-sm">
                     <div class="card-body">
                         <div class="h2 text-warning mb-1" id="pendingTasks">0</div>
-                        <div class="text-muted small"><?php esc_html_e( 'Pending', 'task-manager' ); ?></div>
+                        <div class="text-muted small"><?php esc_html_e( 'Pending', 'project-task-manager' ); ?></div>
                     </div>
                 </div>
             </div>
@@ -109,7 +109,7 @@ defined( 'ABSPATH' ) || exit;
                 <div class="card text-center stats-card shadow-sm">
                     <div class="card-body">
                         <div class="h2 text-danger mb-1" id="overdueTasks">0</div>
-                        <div class="text-muted small"><?php esc_html_e( 'Overdue', 'task-manager' ); ?></div>
+                        <div class="text-muted small"><?php esc_html_e( 'Overdue', 'project-task-manager' ); ?></div>
                     </div>
                 </div>
             </div>
@@ -122,7 +122,7 @@ defined( 'ABSPATH' ) || exit;
                 <div class="card shadow-sm">
                     <div class="card-header bg-warning text-dark">
                         <h5 class="card-title mb-0">
-                            <i class="fas fa-clock me-2"></i><?php esc_html_e( 'Pending Tasks', 'task-manager' ); ?>
+                            <i class="fas fa-clock me-2"></i><?php esc_html_e( 'Pending Tasks', 'project-task-manager' ); ?>
                             <span id="pendingCount" class="badge bg-dark float-end">0</span>
                         </h5>
                     </div>
@@ -139,7 +139,7 @@ defined( 'ABSPATH' ) || exit;
                 <div class="card shadow-sm">
                     <div class="card-header bg-primary text-white">
                         <h5 class="card-title mb-0">
-                            <i class="fas fa-play me-2"></i><?php esc_html_e( 'In Progress', 'task-manager' ); ?>
+                            <i class="fas fa-play me-2"></i><?php esc_html_e( 'In Progress', 'project-task-manager' ); ?>
                             <span id="progressCount" class="badge bg-dark float-end">0</span>
                         </h5>
                     </div>
@@ -156,7 +156,7 @@ defined( 'ABSPATH' ) || exit;
                 <div class="card shadow-sm">
                     <div class="card-header bg-success text-white">
                         <h5 class="card-title mb-0">
-                            <i class="fas fa-check me-2"></i><?php esc_html_e( 'Completed', 'task-manager' ); ?>
+                            <i class="fas fa-check me-2"></i><?php esc_html_e( 'Completed', 'project-task-manager' ); ?>
                             <span id="completedCount" class="badge bg-dark float-end">0</span>
                         </h5>
                     </div>
@@ -174,9 +174,9 @@ defined( 'ABSPATH' ) || exit;
     <div id="loadingSpinner" class="d-none position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center" style="background: rgba(0,0,0,0.5); z-index: 1050;">
         <div class="card shadow p-3 text-center">
             <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden"><?php esc_html_e( 'Loading...', 'task-manager' ); ?></span>
+                <span class="visually-hidden"><?php esc_html_e( 'Loading...', 'project-task-manager' ); ?></span>
             </div>
-            <div class="mt-2 text-muted"><?php esc_html_e( 'Loading tasks...', 'task-manager' ); ?></div>
+            <div class="mt-2 text-muted"><?php esc_html_e( 'Loading tasks...', 'project-task-manager' ); ?></div>
         </div>
     </div>
 
@@ -196,14 +196,14 @@ defined( 'ABSPATH' ) || exit;
     <!-- JavaScript Variables -->
     <script type="text/javascript">
         var taskManagerNonce = '<?php echo wp_create_nonce( 'task_manager_nonce' ); ?>';
-        var taskManagerAPI = '<?php echo rest_url( 'task-manager/v1' ); ?>';
+        var taskManagerAPI = '<?php echo rest_url( 'project-task-manager/v1' ); ?>';
         var taskManagerI18n = {
-            allProjects: '<?php esc_js( __( 'All Projects', 'task-manager' ) ); ?>',
-            loadingTasks: '<?php esc_js( __( 'Loading tasks...', 'task-manager' ) ); ?>',
-            editProject: '<?php esc_js( __( 'Edit Project', 'task-manager' ) ); ?>',
-            deleteConfirm: '<?php esc_js( __( 'Are you sure?', 'task-manager' ) ); ?>',
-            taskDeleted: '<?php esc_js( __( 'Task deleted successfully', 'task-manager' ) ); ?>',
-            projectDeleted: '<?php esc_js( __( 'Project deleted successfully', 'task-manager' ) ); ?>',
+            allProjects: '<?php esc_js( __( 'All Projects', 'project-task-manager' ) ); ?>',
+            loadingTasks: '<?php esc_js( __( 'Loading tasks...', 'project-task-manager' ) ); ?>',
+            editProject: '<?php esc_js( __( 'Edit Project', 'project-task-manager' ) ); ?>',
+            deleteConfirm: '<?php esc_js( __( 'Are you sure?', 'project-task-manager' ) ); ?>',
+            taskDeleted: '<?php esc_js( __( 'Task deleted successfully', 'project-task-manager' ) ); ?>',
+            projectDeleted: '<?php esc_js( __( 'Project deleted successfully', 'project-task-manager' ) ); ?>',
         };
     </script>
 </body>
