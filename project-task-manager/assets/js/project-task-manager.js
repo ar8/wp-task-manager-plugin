@@ -12,9 +12,9 @@ let currentProjectId = '';
 const priorityLevels = ['low', 'medium', 'high'];
 
 // API configuration from wp_localize_script
-const API_BASE = typeof taskManagerAPI !== 'undefined' ? taskManagerAPI : '/wp-json/task-manager/v1';
-const NONCE = typeof taskManagerNonce !== 'undefined' ? taskManagerNonce : '';
-const i18n = typeof taskManagerI18n !== 'undefined' ? taskManagerI18n : {};
+const API_BASE = typeof projectTaskManagerAPI !== 'undefined' ? projectTaskManagerAPI : '/wp-json/project-task-manager/v1';
+const NONCE = typeof projectTaskManagerNonce !== 'undefined' ? projectTaskManagerNonce : '';
+const i18n = typeof projectTaskManagerI18n !== 'undefined' ? projectTaskManagerI18n : {};
 
 // ============ INITIALIZATION ============
 

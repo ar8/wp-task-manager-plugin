@@ -1,10 +1,10 @@
 <?php
 // filepath: /project-task-manager/includes/routes.php
 
-namespace TaskManager\Routes;
+namespace ProjectTaskManager\Routes;
 
-use TaskManager\Controllers\ProjectController;
-use TaskManager\Controllers\TaskController;
+use ProjectTaskManager\Controllers\ProjectController;
+use ProjectTaskManager\Controllers\TaskController;
 
 /**
  * Register all plugin REST API routes

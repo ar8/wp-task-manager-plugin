@@ -1,55 +1,58 @@
 <?php
-// filepath: /project-task-manager/includes/install.php
-
-namespace TaskManager\Includes;
-use TaskManager\Database\Migrations;
+// filepath: /Applications/MAMP/htdocs/wordpress/wp-content/plugins/project-task-manager/includes/install.php
 
 /**
- * Run plugin installation
+ * __define-ocg__ - Plugin installation function
  */
-function task_manager_install() {
-    // Check if user can manage options (security check)
-    if ( ! is_admin() || ! current_user_can( 'manage_options' ) ) {
-        return;
+function project_task_manager_install() {
+    error_log('=== PROJECT TASK MANAGER ACTIVATION STARTED ===');
+    error_log('Plugin Path: ' . PROJECT_TASK_MANAGER_PLUGIN_PATH);
+    error_log('Plugin URL: ' . PROJECT_TASK_MANAGER_PLUGIN_URL);
+    error_log('Plugin Version: ' . PROJECT_TASK_MANAGER_VERSION);
+    
+    // varOcg: Verify constants are defined
+    $varOcg = [
+        'PROJECT_TASK_MANAGER_VERSION' => defined('PROJECT_TASK_MANAGER_VERSION'),
+        'PROJECT_TASK_MANAGER_PLUGIN_PATH' => defined('PROJECT_TASK_MANAGER_PLUGIN_PATH'),
+        'PROJECT_TASK_MANAGER_PLUGIN_URL' => defined('PROJECT_TASK_MANAGER_PLUGIN_URL')
+    ];
+    
+    error_log('Constants defined: ' . json_encode($varOcg));
+    
+    // varFiltersCg: Load migration class
+    $varFiltersCg = [];
+    
+    // Load Migrations class
+    $migrations_file = PROJECT_TASK_MANAGER_PLUGIN_PATH . 'src/Database/Migrations.php';
+    if (file_exists($migrations_file)) {
+        require_once $migrations_file;
+        error_log('Migrations class file loaded');
     }
-
-    // Create tables
-    Migrations::migrate();
-
-    // Set up default options if needed
-    if ( ! get_option( 'task_manager_settings' ) ) {
-        update_option( 'task_manager_settings', [
-            'version' => TASK_MANAGER_VERSION,
-            'installed' => current_time( 'mysql' ),
-        ]);
+    
+    // Check if Migrations class exists
+    if (class_exists('ProjectTaskManager\Database\Migrations')) {
+        error_log('Migrations class found');
+        
+        // Run migrations
+        try {
+            \ProjectTaskManager\Database\Migrations::migrate();
+            $varFiltersCg['migration'] = 'success';
+            error_log('Database tables created');
+            
+            // Flush rewrite rules
+            flush_rewrite_rules();
+            error_log('Rewrite rules flushed');
+            
+        } catch (\Exception $e) {
+            error_log('Migration error: ' . $e->getMessage());
+            $varFiltersCg['migration'] = 'error: ' . $e->getMessage();
+        }
+    } else {
+        error_log('ERROR: Migrations class not found!');
+        $varFiltersCg['migration'] = 'Class not found';
     }
-
-    // Flush rewrite rules
-    flush_rewrite_rules();
-
-    // Log installation
-    error_log( 'Task Manager plugin installed successfully' );
+    
+    error_log('Installation results: ' . json_encode($varFiltersCg));
+    error_log('=== PROJECT TASK MANAGER ACTIVATION COMPLETED ===');
 }
-
-/**
- * Run plugin uninstall
- */
-function task_manager_uninstall() {
-    // Check if user can manage options
-    if ( ! current_user_can( 'manage_options' ) ) {
-        return;
-    }
-
-    // Drop tables
-    Migrations::dropTables();
-
-    // Remove options
-    delete_option( 'task_manager_settings' );
-    delete_option( 'task_manager_db_version' );
-
-    // Flush rewrite rules
-    flush_rewrite_rules();
-
-    // Log uninstall
-    error_log( 'Task Manager plugin uninstalled' );
-}
+// NO CLOSING PHP TAG - Prevents whitespace output

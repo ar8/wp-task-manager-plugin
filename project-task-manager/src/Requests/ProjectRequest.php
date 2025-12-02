@@ -1,7 +1,7 @@
 <?php
 // filepath: project-task-manager/src/Requests/ProjectRequest.php
 
-namespace TaskManager\Requests;
+namespace ProjectTaskManager\Requests;
 
 /**
  * ProjectRequest

@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php esc_attr_e( 'Task Management - Drag & Drop', 'task-manager' ); ?></title>
+    <title><?php esc_attr_e( 'Project Task Management - Drag & Drop', 'project-task-manager' ); ?></title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@ defined( 'ABSPATH' ) || exit;
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h1 class="h3 mb-2">
-                            <i class="fas fa-tasks me-3 text-primary"></i><?php esc_html_e( 'Task Management System', 'project-task-manager' ); ?>
+                            <i class="fas fa-tasks me-3 text-primary"></i><?php esc_html_e( 'Project Task Management System', 'project-task-manager' ); ?>
                         </h1>
                         <p class="text-muted mb-0"><?php esc_html_e( 'Drag and drop tasks to manage their status', 'project-task-manager' ); ?></p>
                     </div>
@@ -181,8 +181,8 @@ defined( 'ABSPATH' ) || exit;
     </div>
 
     <!-- Modals -->
-    <?php include TASK_MANAGER_PATH . 'src/Views/modals/project-modal.php'; ?>
-    <?php include TASK_MANAGER_PATH . 'src/Views/modals/task-modal.php'; ?>
+    <?php include PROJECT_TASK_MANAGER_PATH . 'src/Views/modals/project-modal.php'; ?>
+    <?php include PROJECT_TASK_MANAGER_PATH . 'src/Views/modals/task-modal.php'; ?>
     
     <!-- Toast Notifications Container -->
     <div class="toast-container position-fixed top-0 end-0 p-3" id="toastContainer"></div>
@@ -195,9 +195,9 @@ defined( 'ABSPATH' ) || exit;
 
     <!-- JavaScript Variables -->
     <script type="text/javascript">
-        var taskManagerNonce = '<?php echo wp_create_nonce( 'task_manager_nonce' ); ?>';
-        var taskManagerAPI = '<?php echo rest_url( 'project-task-manager/v1' ); ?>';
-        var taskManagerI18n = {
+        var projectTaskManagerNonce = '<?php echo wp_create_nonce( 'project_task_manager_nonce' ); ?>';
+        var projectTaskManagerAPI = '<?php echo rest_url( 'project-task-manager/v1' ); ?>';
+        var projectTaskManagerI18n = {
             allProjects: '<?php esc_js( __( 'All Projects', 'project-task-manager' ) ); ?>',
             loadingTasks: '<?php esc_js( __( 'Loading tasks...', 'project-task-manager' ) ); ?>',
             editProject: '<?php esc_js( __( 'Edit Project', 'project-task-manager' ) ); ?>',

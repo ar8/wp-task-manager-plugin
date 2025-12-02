@@ -8,7 +8,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-A drag-and-drop task management system for WordPress
+A drag-and-drop project task management system for WordPress
 
 == Installation ==
 1. Upload the plugin to /wp-content/plugins/

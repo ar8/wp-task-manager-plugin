@@ -1,9 +1,9 @@
 <?php
 // filepath: project-task-manager/src/Models/Task.php
 
-namespace TaskManager\Models;
+namespace ProjectTaskManager\Models;
 
-use TaskManager\Models\Project;
+use ProjectTaskManager\Models\Project;
 
 /**
  * Task Model Class for WordPress

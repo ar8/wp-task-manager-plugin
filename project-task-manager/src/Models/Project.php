@@ -1,7 +1,7 @@
 <?php
 // filepath: project-task-manager/src/Models/Project.php
 
-namespace TaskManager\Models;
+namespace ProjectTaskManager\Models;
 
 /**
  * Project Model Class for WordPress

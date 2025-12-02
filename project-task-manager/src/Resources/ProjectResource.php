@@ -1,9 +1,9 @@
 <?php
 // filepath: project-task-manager/src/Resources/ProjectResource.php
 
-namespace TaskManager\Resources;
+namespace ProjectTaskManager\Resources;
 
-use TaskManager\Models\Task;
+use ProjectTaskManager\Models\Task;
 
 /**
  * ProjectResource

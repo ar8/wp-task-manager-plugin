@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
-use TaskManager\Requests\ProjectRequest;
-use TaskManager\Resources\ProjectResource;
+use ProjectTaskManager\Requests\ProjectRequest;
+use ProjectTaskManager\Resources\ProjectResource;
 
 class ProjectController extends Controller
 {

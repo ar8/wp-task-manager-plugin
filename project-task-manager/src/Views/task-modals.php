@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
             </div>
 
             <form id="taskForm" class="needs-validation" novalidate>
-                <?php wp_nonce_field( 'task_manager_nonce', 'task_nonce' ); ?>
+                <?php wp_nonce_field( 'project_task_manager_nonce', 'task_nonce' ); ?>
                 <input type="hidden" name="task_id" id="taskId" value="">
 
                 <div class="modal-body">
@@ -115,7 +115,7 @@ defined( 'ABSPATH' ) || exit;
             </div>
 
             <form id="taskFormEdit" class="needs-validation" novalidate>
-                <?php wp_nonce_field( 'task_manager_nonce', 'task_nonce_edit' ); ?>
+                <?php wp_nonce_field( 'project_task_manager_nonce', 'task_nonce_edit' ); ?>
                 <input type="hidden" name="task_id" id="taskIdEdit" value="">
 
                 <div class="modal-body">

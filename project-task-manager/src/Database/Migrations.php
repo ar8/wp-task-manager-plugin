@@ -1,7 +1,7 @@
 <?php
 // filepath: project-task-manager/src/Database/Migrations.php
 
-namespace TaskManager\Database;
+namespace ProjectTaskManager\Database;
 
 class Migrations {
     
@@ -51,7 +51,7 @@ class Migrations {
         dbDelta( $tasks_table );
 
         // Log migration completion
-        update_option( 'task_manager_db_version', TASK_MANAGER_VERSION );
+        update_option( 'project_task_manager_db_version', PROJECT_TASK_MANAGER_VERSION );
     }
 
     /**
@@ -65,7 +65,7 @@ class Migrations {
         $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}tm_projects" );
 
         // Clean up option
-        delete_option( 'task_manager_db_version' );
+        delete_option( 'project_task_manager_db_version' );
     }
 
     /**
@@ -87,7 +87,7 @@ class Migrations {
      * Get database version
      */
     public static function getDbVersion() {
-        return get_option( 'task_manager_db_version' );
+        return get_option( 'project_task_manager_db_version' );
     }
 
     /**
@@ -96,7 +96,7 @@ class Migrations {
     public static function migrate() {
         $current_version = self::getDbVersion();
         
-        if ( $current_version === false || version_compare( $current_version, TASK_MANAGER_VERSION, '<' ) ) {
+        if ( $current_version === false || version_compare( $current_version, PROJECT_TASK_MANAGER_VERSION, '<' ) ) {
             self::createTables();
         }
     }
